@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dheer N Raijada's Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:#FFD700;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#ddd;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#FFD700;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+background:radial-gradient(circle,#2b2000,#020617);
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(90deg,#FFD700,#FFA500);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:20px;
+color:#bbb;
+max-width:650px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:40px;
+cursor:pointer;
+border:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#FFD700,#FFA500);
+color:black;
+}
+
+.btn-outline{
+border:2px solid #FFD700;
+background:transparent;
+color:#FFD700;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* SECTION */
+
+section{
+padding:100px 10%;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:40px;
+color:#FFD700;
+margin-bottom:40px;
+}
+
+/* ABOUT */
+
+.about-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.about-text{
+line-height:1.7;
+color:#cbd5f5;
+}
+
+.about-image{
+display:flex;
+justify-content:center;
+}
+
+.image-wrapper{
+width:320px;
+height:320px;
+border-radius:50%;
+padding:6px;
+background:linear-gradient(45deg,#FFD700,#FFA500);
+animation:float 6s ease-in-out infinite;
+}
+
+.image-wrapper img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.skill-card{
+background:#0b1220;
+padding:30px;
+border-radius:12px;
+border:1px solid #1e293b;
+transition:.3s;
+}
+
+.skill-card:hover{
+border-color:#FFD700;
+transform:translateY(-6px);
+}
+
+.skill-card h3{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.tech-grid{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:15px;
+}
+
+.tech{
+background:#0b1220;
+padding:12px;
+text-align:center;
+border-radius:8px;
+border:1px solid #1e293b;
+transition:.3s;
+}
+
+.tech:hover{
+border-color:#FFD700;
+color:#FFD700;
+}
+
+/* TIMELINE */
+
+.timeline{
+position:relative;
+max-width:1000px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:2px;
+background:#FFD700;
+top:0;
+bottom:0;
+left:50%;
+}
+
+.timeline-item{
+padding:20px 40px;
+position:relative;
+width:50%;
+}
+
+.timeline-item:nth-child(odd){
+left:0;
+}
+
+.timeline-item:nth-child(even){
+left:50%;
+}
+
+.timeline-content{
+background:#0b1220;
+padding:20px;
+border-radius:10px;
+border:1px solid #1e293b;
+}
+
+.timeline-content:hover{
+border-color:#FFD700;
+}
+
+.timeline-item::after{
+content:'';
+position:absolute;
+width:14px;
+height:14px;
+right:-7px;
+background:#FFD700;
+top:25px;
+border-radius:50%;
+}
+
+.timeline-item:nth-child(even)::after{
+left:-7px;
+}
+
+/* PROJECTS */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+gap:40px;
+}
+
+.project{
+background:#0b1220;
+border-radius:12px;
+overflow:hidden;
+border:1px solid #1e293b;
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-6px);
+border-color:#FFD700;
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
+padding:25px;
+}
+
+.project-tags{
+margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.tag{
+background:#1e293b;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+}
+
+.repo-link{
+display:inline-block;
+margin-top:15px;
+color:#FFD700;
+text-decoration:none;
+font-weight:500;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact-box{
+margin-top:40px;
+background:#0b1220;
+padding:40px;
+border-radius:12px;
+border:1px solid #1e293b;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+border-radius:8px;
+border:1px solid #334155;
+background:#020617;
+color:white;
+}
+
+.contact textarea{
+grid-column:span 2;
+height:150px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#aaa;
+}
+/* SOCIAL LINKS - CENTERED ABOVE BUTTON */
+        .social-links {
+            margin-top: 35px;
+            margin-bottom: 25px; /* Space between links and button */
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+.social-links a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: .3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            background: #FFD700;
+            color: black;
+        }
+        /* LOADER */
+
+.loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+}
+
+.loader h1{
+font-size:40px;
+color:#FFD700;
+letter-spacing:3px;
+margin-bottom:20px;
+}
+
+.spinner{
+width:60px;
+height:60px;
+border:4px solid rgba(255,215,0,0.2);
+border-top:4px solid #FFD700;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+</head>
+
+<body>
+<div class="loader" id="loader">
+<h1>Loading Portfolio</h1>
+<div class="spinner"></div>
+</div>
+<nav>
+<div class="logo">Dheer's Portfolio</div>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Hi, I'm <span>Dheer N Raijada</span></h1>
+
+<p>
+Computer Science Engineer passionate about full-stack development,
+Spring Boot backend systems, and AI technologies including RAG and Generative AI.
+</p>
+<div class="social-links">
+
+<a href="https://github.com/dnr12974" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/dheer-n-raijada/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+<button class="btn btn-primary" onclick="scrollToSection('projects')">
+View My Work
+</button>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-container">
+
+<div class="about-text">
+
+<p>
+I am a Computer Science undergraduate passionate about building scalable software
+and solving real-world problems through technology. My interests include full-stack
+development, backend engineering using Spring Boot, and emerging AI technologies
+such as Retrieval-Augmented Generation and Generative AI systems.
+</p>
+
+<br>
+
+<p>
+I also actively practice competitive programming in Java which strengthens my
+problem-solving and algorithmic thinking skills.
+</p>
+
+</div>
+
+<div class="about-image">
+    <div class="image-wrapper">
+        <img src="mypic.jpeg" alt="Dheer N Raijada">
+    </div>
+</div>
+
+</div>
+
+</section>
+<!--SKILLS-->
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Full Stack Development</h3>
+<p>
+Building scalable web applications using React, Node.js, Express and modern frontend architectures.
+</p>
+</div>
+
+<div class="skill-card">
+<h3>Backend Development</h3>
+<p>
+Designing robust backend systems using Spring Boot, REST APIs, authentication systems and microservices.
+</p>
+</div>
+
+<div class="skill-card">
+<h3>AI / Machine Learning</h3>
+<p>
+Developing ML pipelines using Python, implementing models like YAMNet, and working with Generative AI and RAG systems.
+</p>
+</div>
+
+
+</div>
+
+
+<div class="tech-grid">
+
+<div class="tech">Java</div>
+<div class="tech">Python</div>
+<div class="tech">JavaScript</div>
+<div class="tech">C</div>
+
+<div class="tech">React</div>
+<div class="tech">Node.js</div>
+<div class="tech">Express</div>
+<div class="tech">Spring Boot</div>
+
+<div class="tech">MongoDB</div>
+<div class="tech">MySQL</div>
+<div class="tech">PostgreSQL</div>
+
+<div class="tech">Docker</div>
+<div class="tech">Git</div>
+<div class="tech">Vercel</div>
+<div class="tech">Render</div>
+
+<div class="tech">System Design</div>
+<div class="tech">DBMS</div>
+<div class="tech">Networking</div>
+<div class="tech">OOP</div>
+<div class="tech">VS Code</div>
+<div class="tech">IntelliJ IDEA</div>
+
+</div>
+
+</section>
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Ramaiah Institute of Technology</h3>
+<p>B.E Computer Science</p>
+<span>2022 – 2026</span>
+<p>CGPA: 9.57</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>MES BRS PU College</h3>
+<p>PUC – State Board</p>
+<span>2020 – 2022</span>
+<p>Grade: 97.8%</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>MES Kishore Kendra Public School</h3>
+<p>ICSE Board</p>
+<span>2007 – 2020</span>
+<p>Grade: 96.4%</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Target Corporation India</h3>
+<p>Product Engineering Intern</p>
+<span>Feb 2026 – Present | Bengaluru</span>
+<ul>
+<li>
+<p>
+Working in the product engineering team building scalable enterprise
+software systems and contributing to production platforms used across
+retail operations.
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Samsung R&D Institute</h3>
+<p>Research Intern</p>
+<span>2024-2025 | Bengaluru</span>
+
+<ul>
+<li>Developed dual-channel Android voice recorder app with .mp4 encoding to optimize storage efficiency.</li>
+<li> Conducted EDA on 350+ audio samples and applied audio augmentation to enhance dataset quality.</li>
+<li>Designed a YAMNet-based model for directional sound event localization and spatial awareness.</li>
+</ul>
+
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Bharat Electronics Limited</h3>
+<p>Software Engineer Intern</p>
+<span>Sept 2024 | Bengaluru</span>
+
+<p>
+<ul>
+<li>Built a real-time vehicle tracking system using React, Node.js, Express and PostgreSQL.</li>
+<li>Integrated Google Maps for location visualization.</li>
+<li>Implemented role-based access and CRUD features.</li>
+</ul>
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="project">
+
+<img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg">
+
+<div class="project-content">
+
+<h3>DesiHire</h3>
+
+<p>
+<ul>
+<li>Enabled an end-to-end freelancing marketplace with Stripe payments, real-time chat, and user-centric
+features, empowering marginalized communities by connecting skilled workers with urban opportunities.</li>
+<br>
+<li>
+Implemented secure role-based authentication using JWT and bcrypt, ensuring protected access and
+verified onboarding of marginalized users.</li>
+<br>
+
+<li>Integrated multilingual support for major Indian languages, enhancing accessibility and user reach.</li>
+<br>
+<li>Built a scalable CI/CD pipeline to automate build, test, and deployment, reducing manual effort by 50%.</li>
+</ul>
+</p>
+
+<div class="project-tags">
+<div class="tag">MongoDB</div>
+<div class="tag">Express</div>
+<div class="tag">React</div>
+<div class="tag">Node</div>
+</div>
+
+<a class="repo-link" href="https://github.com/dnr12974/DesiHire" target="_blank">View Repo</a>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
+
+<div class="project-content">
+
+<h3>IntervYou AI</h3>
+
+<p>
+<ul>
+<li>Architected and launched an intelligent voice AI recruiter that automates hiring by conducting real-time
+interviews using VAPI, analyzing candidate responses for sentiment and relevance to qualify talent efficiently.</li><br>
+<li>Designed a SaaS platform to automate hiring rounds and enable mock interview preparation for HR,
+behavioral, and technical assessments, helping 200+ users boost confidence through realistic simulations.</li><br>
+<li>Integrated OpenAI and Vapi APIs to enable voice-driven interviews with intelligent question generation,
+and AI-powered feedback for dynamic candidate evaluation.</li><br>
+</ul>
+</p>
+
+<div class="project-tags">
+<div class="tag">Next.js</div>
+<div class="tag">OpenAI</div>
+<div class="tag">VAPI</div>
+<div class="tag">Supabase</div>
+</div>
+
+<a class="repo-link" href="https://github.com/dnr12974/IntervYou-AI" target="_blank">View Repo</a>
+</ul>
+</p>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Let's Work Together</h2>
+
+<div class="contact-box">
+
+<form onsubmit="sendMail(event)">
+
+<div class="contact-grid">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+</div>
+
+<button class="btn btn-primary" type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+</section>
+<footer>
+
+© 2026 Dheer N Raijada
+
+</footer>
+
+
+
+<script>
+
+// Smooth scroll
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'})
+}
+
+// Loader (6 seconds)
+window.onload = function(){
+setTimeout(()=>{
+document.getElementById("loader").style.display="none"
+},6000)
+}
+
+
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'})
+}
+
+function sendMail(event){
+
+event.preventDefault()
+
+let name=document.getElementById("name").value
+let email=document.getElementById("email").value
+let message=document.getElementById("message").value
+
+let mailtoLink=`mailto:nrdheer2004@gmail.com?subject=Portfolio Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`
+
+window.location.href=mailtoLink
+
+}
+
+</script>
+
+</body>
+</html>
